@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SARNES – Testbild</title>
+<meta name="robots" content="noindex">
+<style>
+  html,body{margin:0;height:100%;background:#111;color:#ddd;font-family:Helvetica,Arial,sans-serif}
+  main{min-height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;padding:20px;box-sizing:border-box}
+  .tv{width:min(92vw,960px);aspect-ratio:4/3;border-radius:28px;overflow:hidden;box-shadow:0 0 0 14px #2a2622,0 0 0 16px #000,0 20px 60px #000;position:relative}
+  .tv svg{width:100%;height:100%;display:block}
+  .tv::after{content:"";position:absolute;inset:0;pointer-events:none;
+    background:repeating-linear-gradient(0deg,rgba(0,0,0,.12) 0 1px,transparent 1px 3px),
+               radial-gradient(ellipse at center,transparent 60%,rgba(0,0,0,.45) 100%)}
+  button{background:#222;color:#eee;border:1px solid #555;border-radius:6px;padding:8px 16px;font-size:15px;cursor:pointer}
+  button.on{background:#c00;border-color:#f44}
+  p{margin:0;font-size:14px;color:#999;text-align:center}
+  a{color:#bbb}
+</style>
+</head>
+<body>
+<main>
+  <div class="tv">
+    <svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica,Arial,sans-serif">
+      <defs>
+        <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse" x="0" y="0">
+          <rect width="50" height="50" fill="#7f7f7f"/>
+          <path d="M0 0H50M0 0V50" stroke="#fff" stroke-width="3"/>
+        </pattern>
+        <clipPath id="circ"><circle cx="400" cy="300" r="240"/></clipPath>
+        <pattern id="f1" width="16" height="10" patternUnits="userSpaceOnUse"><rect width="8" height="10" fill="#fff"/><rect x="8" width="8" height="10" fill="#000"/></pattern>
+        <pattern id="f2" width="10" height="10" patternUnits="userSpaceOnUse"><rect width="5" height="10" fill="#fff"/><rect x="5" width="5" height="10" fill="#000"/></pattern>
+        <pattern id="f3" width="6" height="10" patternUnits="userSpaceOnUse"><rect width="3" height="10" fill="#fff"/><rect x="3" width="3" height="10" fill="#000"/></pattern>
+        <pattern id="f4" width="4" height="10" patternUnits="userSpaceOnUse"><rect width="2" height="10" fill="#fff"/><rect x="2" width="2" height="10" fill="#000"/></pattern>
+        <pattern id="f5" width="2" height="10" patternUnits="userSpaceOnUse"><rect width="1" height="10" fill="#fff"/><rect x="1" width="1" height="10" fill="#000"/></pattern>
+      </defs>
+
+      <!-- Hintergrundgitter -->
+      <rect width="800" height="600" fill="url(#grid)"/>
+      <!-- Randmarken -->
+      <g fill="#000">
+        <rect x="0" y="0" width="25" height="600"/><rect x="775" y="0" width="25" height="600"/>
+      </g>
+      <g fill="#fff">
+        <rect x="0" y="100" width="25" height="50"/><rect x="0" y="250" width="25" height="50"/><rect x="0" y="400" width="25" height="50"/>
+        <rect x="775" y="150" width="25" height="50"/><rect x="775" y="300" width="25" height="50"/><rect x="775" y="450" width="25" height="50"/>
+      </g>
+
+      <!-- Kreis -->
+      <g clip-path="url(#circ)">
+        <rect x="150" y="50" width="500" height="500" fill="#7f7f7f"/>
+        <!-- oben: Schwarz/Weiß-Sprung -->
+        <rect x="150" y="60" width="500" height="50" fill="#fff"/>
+        <rect x="350" y="60" width="100" height="50" fill="#000"/>
+        <!-- Farbbalken -->
+        <g>
+          <rect x="160" y="110" width="60" height="90" fill="#fff"/>
+          <rect x="220" y="110" width="60" height="90" fill="#ffff00"/>
+          <rect x="280" y="110" width="60" height="90" fill="#00ffff"/>
+          <rect x="340" y="110" width="60" height="90" fill="#00ff00"/>
+          <rect x="400" y="110" width="60" height="90" fill="#ff00ff"/>
+          <rect x="460" y="110" width="60" height="90" fill="#ff0000"/>
+          <rect x="520" y="110" width="60" height="90" fill="#0000ff"/>
+          <rect x="580" y="110" width="70" height="90" fill="#000"/>
+          <rect x="150" y="110" width="10" height="90" fill="#fff"/>
+        </g>
+        <!-- Kennungsfeld -->
+        <rect x="150" y="200" width="500" height="60" fill="#000"/>
+        <rect x="300" y="208" width="200" height="44" fill="#fff"/>
+        <text x="400" y="242" text-anchor="middle" font-size="34" font-weight="bold" letter-spacing="6" fill="#000">SARNES</text>
+        <!-- Graustufen -->
+        <rect x="150" y="260" width="100" height="80" fill="#000"/>
+        <rect x="250" y="260" width="100" height="80" fill="#404040"/>
+        <rect x="350" y="260" width="100" height="80" fill="#808080"/>
+        <rect x="450" y="260" width="100" height="80" fill="#c0c0c0"/>
+        <rect x="550" y="260" width="100" height="80" fill="#fff"/>
+        <!-- Frequenzgruppen -->
+        <rect x="150" y="340" width="100" height="60" fill="#808080"/>
+        <rect x="180" y="340" width="80" height="60" fill="url(#f1)"/>
+        <rect x="260" y="340" width="80" height="60" fill="url(#f2)"/>
+        <rect x="340" y="340" width="80" height="60" fill="url(#f3)"/>
+        <rect x="420" y="340" width="80" height="60" fill="url(#f4)"/>
+        <rect x="500" y="340" width="80" height="60" fill="url(#f5)"/>
+        <rect x="580" y="340" width="70" height="60" fill="#808080"/>
+        <!-- Uhrfeld -->
+        <rect x="150" y="400" width="500" height="60" fill="#000"/>
+        <rect x="320" y="406" width="160" height="48" fill="#000" stroke="#fff" stroke-width="2"/>
+        <text id="clock" x="400" y="442" text-anchor="middle" font-size="32" font-family="Courier New,monospace" font-weight="bold" fill="#fff">00:00:00</text>
+        <!-- unten -->
+        <rect x="150" y="460" width="500" height="40" fill="#ff0000"/>
+        <rect x="150" y="500" width="500" height="50" fill="#fff"/>
+        <rect x="370" y="500" width="60" height="50" fill="#000"/>
+      </g>
+      <circle cx="400" cy="300" r="240" fill="none" stroke="#fff" stroke-width="3"/>
+      <!-- Mittelkreuz -->
+      <g stroke="#fff" stroke-width="2">
+        <line x1="400" y1="260" x2="400" y2="340"/>
+        <line x1="350" y1="300" x2="450" y2="300"/>
+      </g>
+      <text x="400" y="585" text-anchor="middle" font-size="16" fill="#fff" letter-spacing="3">INDUSTRIEOFENBAU · BADEN-BADEN</text>
+    </svg>
+  </div>
+
+  <button id="tone">1000-Hz-Ton einschalten</button>
+  <p>Testseite – die neue Webseite ist in Arbeit.<br>
+     SARNES Ingenieure GmbH &amp; Co. KG · Dr.-Rudolf-Eberle-Str. 20 · 76534 Baden-Baden ·
+     <a href="https://www.sarnes.de">www.sarnes.de</a></p>
+</main>
+
+<script>
+  const clock = document.getElementById('clock');
+  const tick = () => { clock.textContent = new Date().toLocaleTimeString('de-DE', {timeZone:'Europe/Berlin'}); };
+  tick(); setInterval(tick, 1000);
+
+  let ctx, osc;
+  const btn = document.getElementById('tone');
+  btn.addEventListener('click', () => {
+    if (osc) { osc.stop(); osc = null; btn.textContent = '1000-Hz-Ton einschalten'; btn.classList.remove('on'); return; }
+    ctx = ctx || new (window.AudioContext || window.webkitAudioContext)();
+    osc = ctx.createOscillator(); const g = ctx.createGain();
+    osc.frequency.value = 1000; g.gain.value = 0.08;
+    osc.connect(g).connect(ctx.destination); osc.start();
+    btn.textContent = 'Ton aus'; btn.classList.add('on');
+  });
+</script>
+</body>
+</html>
